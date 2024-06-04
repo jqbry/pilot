@@ -1,0 +1,22 @@
+def find_variations(data_set_1, data_set_2):
+    variations = []
+    # Ensure both datasets have the same length
+    if len(data_set_1) != len(data_set_2):
+        raise ValueError("Datasets must have the same length for element-wise comparison.")
+    
+    # Calculate the variation for each pair of corresponding elements
+    for value1, value2 in zip(data_set_1, data_set_2):
+        variations.append(value2 - value1)
+    
+    return variations
+
+# Example datasets
+data_set_1 = [1, 2, 3, 4, 5]
+data_set_2 = [2, 3, 4, 5, 6]
+
+# Find variations
+variations = find_variations(data_set_1, data_set_2)
+
+# Print the results
+print(f"Variations between corresponding values: {variations}")
+
